@@ -5,36 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CoffeeDrip</title>
-
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div class="row">
-        <div class="column">
-            <div class="cup">
-                <div class="coffee"></div>
-            </div>
-            <div class="handleShadow">
-                <div class="handle"></div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="cup">
-                <div class="coffee"></div>
-            </div>
-            <div class="handleShadow">
-                <div class="handle"></div>
-            </div>  
-        </div>
-    </div><!--close for row-->
+    <div class="row" id = "row"></div>
     
-
-
-    
-    <!-- <div class="cup">
-        <div class="coffee"></div>
-     </div> -->
-   
 <script>
     var coffee = document.querySelector('.coffee');
     var bottom = -170;
@@ -56,6 +34,16 @@
             }
         }
     }
+    var cupCount = 30
+    var x = 0
+    var columnCount = 'column' + x.toString()
+
+    $(document).ready(function(){
+        for (var i = 0; i < cupCount; i++){
+            setTimeout(function(){$('#row').append("<div><div class='cup'><div class='coffee'></div></div><div class='handleShadow'><div class='handle'></div></div></div>")}, i*500)
+        }
+       
+    });
 </script>
 </body>
 </html>

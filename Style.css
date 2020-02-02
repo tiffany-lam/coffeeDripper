@@ -16,25 +16,12 @@ body{
     margin-left: 5%;
     margin-top: 5%;
 }
-.row::after{
-    content: "";
-    clear: both;
-    display: table;
-    padding-top: 30px;
+
+#row{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
-
-/* .container{
-    margin-top: 10%;
-    margin-left: 100px;
-    position: relative;
-
-} */
-
-/* body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .cup{
     width: 85px;
@@ -60,9 +47,7 @@ body{
     transition: all 1.4s linear;
     animation: fillCup 4s linear forwards;
 }
-.coffee:nth-of-type(2){
-    animation-delay: 4ms;
-}
+
 
 @keyframes fillCup{
     0%{ 
@@ -84,7 +69,7 @@ body{
     width: 120px;
     height: 90px;
     margin-left: 89px;
-    margin-top: 10%;
+    margin-top: 6%;
     overflow: hidden;
     position: relative;
 

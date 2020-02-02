@@ -1,0 +1,31 @@
+html,
+body{
+    height: 100%;
+    background: #444;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 70px;
+    height: 75px;
+    border: 2px solid white;
+    border-radius: 0.3em;
+    position: relative;
+    box-shadow: 2px 0px 40px black;
+}
+
+.wave {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background: #4d2600;
+    left: 50%;
+    bottom: -190%;
+    border-radius: 33%;
+    transition: all 1.4s linear;
+}

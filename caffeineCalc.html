@@ -14,19 +14,22 @@
     <link rel = "stylesheet" href="formStyle.css">
 </head>
 <body>
+    <div class = "logo">
+        <a href = index.html>Caffeinate</a>
+    </div>
     <div id = formThing>
         <h3>How long do you want to stay up?</h3>
         <input class ="input1" type="number" id="hours" name = "hours"> </input> hours
         <br>
-        <button class ="button4" onclick = "math()"> Submit </button>
+        <button class ="button4" onclick = "math()" onclick= "document.getElementById('hours').value = ''"> Submit </button>
     
         <p id="valueDisplay">???</p>
-        <p>cups of coffee</p>
+        <p id = "cupsText">cups of coffee</p>
         <div class = "emoji">☕ </div>
-        <p>Depending on your caffeine tolerance, this amount may vary. This value is calculated for someone with a normal tolerance. </p>
         <!--Adding math calculations-->
         <script type = "text/javascript">
             function math(){
+                
                 var hours = document.getElementById("hours").value;
                 //caffeine has half life of 5hrs 
                 //
@@ -36,49 +39,49 @@
                 var roundedCups = Math.round(cups*10)/10;
                 var returnValue = roundedCups;
                 document.getElementById("valueDisplay") .innerHTML = roundedCups;
+
+                var cupCount = roundedCups;
+                var x = 0
+                var columnCount = 'column' + x.toString()
+
+                $(document).ready(function(){
+                    for (var i = 0; i < cupCount; i++){
+                        setTimeout(function(){$('#row').append("<div><div class='cup'><div class='coffee'></div></div><div class='handleShadow'><div class='handle'></div></div></div>")}, i*500)
+                    }
+                
+                });
+                
             }
+            var coffee = document.querySelector('.coffee');
+            var bottom = -170;
+
+            window.addEventListener('load', function(){
+                move();
+            });
+
+            function move(){
+                var id = setInterval(frame, 2000);
+
+                function frame(){
+                    if (bottom >= -120){
+                        coffee.style.bottom = bottom + "%";
+                        bottom = bottom - 25;
+                    }else{
+                        coffee.style.bottom = bottom + "%";
+                        bottom = bottom - -25;
+                    }
+                }
+            }
+        
                 
         </script>
     </div>    
-    <div class="row" id ="row">
+    <div class="row" id ="row"> </div><!--close for row-->
+
+    <div id = "formThing">
+        <p id = "warningText">Depending on your caffeine tolerance, this amount may vary. This value is calculated for someone with a normal tolerance. </p>
         
-    </div><!--close for row-->
+    </div>
     
-
-
-    <div class="row" id = "row"></div>
-    
-<script>
-    var coffee = document.querySelector('.coffee');
-    var bottom = -170;
-
-    window.addEventListener('load', function(){
-        move();
-    });
-
-    function move(){
-        var id = setInterval(frame, 2000);
-
-        function frame(){
-            if (bottom >= -120){
-                coffee.style.bottom = bottom + "%";
-                bottom = bottom - 25;
-            }else{
-                coffee.style.bottom = bottom + "%";
-                bottom = bottom - -25;
-            }
-        }
-    }
-    var cupCount = 30
-    var x = 0
-    var columnCount = 'column' + x.toString()
-
-    $(document).ready(function(){
-        for (var i = 0; i < cupCount; i++){
-            setTimeout(function(){$('#row').append("<div><div class='cup'><div class='coffee'></div></div><div class='handleShadow'><div class='handle'></div></div></div>")}, i*500)
-        }
-       
-    });
-</script>
 </body>
 </html>

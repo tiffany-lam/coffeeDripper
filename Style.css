@@ -1,4 +1,4 @@
-html,
+
 body{
     height: 100%;
     background: #444;
@@ -20,7 +20,9 @@ body{
 #row{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    align-content: center;
+    margin-left: 5%;
 }
 
 .cup{

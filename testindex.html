@@ -2,13 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Jua%7CManuale%7CUnlock%7CViga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chango&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CoffeeDrip</title>
 
     <link rel="stylesheet" href="Style.css">
+    <link rel = "stylesheet" href="formStyle.css">
 </head>
 <body>
+    <div id = formThing>
+        <h3>How long do you want to stay up?</h3>
+        <input class ="input1" type="number" id="hours" name = "hours"> </input> hours
+        <br>
+        <button class ="button4" onclick = "math()"> Submit </button>
+    
+        <p id="valueDisplay">???</p>
+        <p>cups of coffee</p>
+        <div class = "emoji">☕ </div>
+        <p>Depending on your caffine tolerance, this amount may vary. This value is calculated for someone with a normal tolerance. </p>
+        <!--Adding math calculations-->
+        <script type = "text/javascript">
+            function math(){
+                var hours = document.getElementById("hours").value;
+                //caffeine has half life of 5hrs 
+                //
+                var coffeeMg = (hours/5) * 50
+                //95 mg of caffeine in ONE cup of coffee
+                var cups = coffeeMg / 95;
+                var roundedCups = Math.round(cups*10)/10;
+                var returnValue = roundedCups;
+                document.getElementById("valueDisplay") .innerHTML = roundedCups;
+            }
+                
+        </script>
+    </div>    
     <div class="row">
         <div class="column">
             <div class="cup">

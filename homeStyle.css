@@ -1,17 +1,112 @@
 
-h2{
-    font-size: 50px;
-    font-family: 'Viga', sans-serif;
-    position: absolute;
-    top: 200px;
-    left: 0; 
-    width: 100%;
-    padding-left: 50%;
-    
-}
 body{
-    background-image: url(/images/sunset\ background.jpg);
+    background-image: url("/images/sunset\ background.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-color: lightyellow;
+    background-attachment: fixed;
     background-size:cover;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
+
+/*# is id 
+  . is class*/
+#top{
+    top: 30px;
+
+}
+.landing{
+     font-size: 50px;
+     font-family: 'Viga', sans-serif;
+     color: white;
+     letter-spacing: 3px;
+     text-align: center;
+     margin: 10% auto;
+
+}
+.tagline{
+    font-family: 'Unlock', cursive;
+    font-size: 50px;
+
+}
+
+.description{
+    margin: 25%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-family: 'Manuale', serif;
+    background-color:#ffffff;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+    padding: 20px;
+
+
+}
+
+/*button stuff*/
+.buttonCoffee {
+    font-family: 'Jua', sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 5px;
+    margin-bottom: 10%;
+  }
+  .buttonCoffee span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+  .buttonCoffee span:after {
+    content: '\2615'; /*Coffee emoji owo*/
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    transition: 1.2s;
+    right: 330px
+  }
+  .buttonCoffee:hover span {
+    padding-right: 50px;
+  }
+  .buttonCoffee:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.bottom{
+    margin: 25%;
+}
+/*Custom scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 10px;
+  }

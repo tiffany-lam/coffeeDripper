@@ -9,8 +9,53 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div class="box">
-       <div class="wave"></div>
-    </div>
+    <div class="row">
+        <div class="column">
+            <div class="cup">
+                <div class="coffee"></div>
+            </div>
+            <div class="handleShadow">
+                <div class="handle"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="cup">
+                <div class="coffee"></div>
+            </div>
+            <div class="handleShadow">
+                <div class="handle"></div>
+            </div>  
+        </div>
+    </div><!--close for row-->
+    
+
+
+    
+    <!-- <div class="cup">
+        <div class="coffee"></div>
+     </div> -->
+   
+<script>
+    var coffee = document.querySelector('.coffee');
+    var bottom = -170;
+
+    window.addEventListener('load', function(){
+        move();
+    });
+
+    function move(){
+        var id = setInterval(frame, 2000);
+
+        function frame(){
+            if (bottom >= -120){
+                coffee.style.bottom = bottom + "%";
+                bottom = bottom - 25;
+            }else{
+                coffee.style.bottom = bottom + "%";
+                bottom = bottom - -25;
+            }
+        }
+    }
+</script>
 </body>
 </html>

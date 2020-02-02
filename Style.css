@@ -2,30 +2,124 @@ html,
 body{
     height: 100%;
     background: #444;
+    background-image: url("/images/sunset background.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-body{
+.column{
+    float: left;
+    width: 10%;
+    padding: 5px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+    padding-top: 30px;
+}
+
+/* .container{
+    margin-top: 10%;
+    margin-left: 100px;
+    position: relative;
+
+} */
+
+/* body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.box{
-    width: 70px;
+.cup{
+    width: 85px;
     height: 75px;
-    border: 2px solid white;
+    border: 4.5px solid white;
     border-radius: 0.3em;
-    position: relative;
+    position: absolute;
+    overflow: hidden;
     box-shadow: 2px 0px 40px black;
+    background: white;
+    border-bottom-right-radius: 2.5em;
+    border-bottom-left-radius: 2.5em;
 }
 
-.wave {
+.coffee {
     width: 150px;
     height: 150px;
     position: absolute;
     background: #4d2600;
-    left: 50%;
+    left: -50%;
     bottom: -190%;
     border-radius: 33%;
     transition: all 1.4s linear;
+    animation: fillCup 4s linear forwards;
+}
+.coffee:nth-of-type(2){
+    animation-delay: 4ms;
+}
+
+@keyframes fillCup{
+    0%{ 
+        transform: rotate(0);
+        border-radius: 30%;
+        bottom: -170px;
+    }
+    45%{
+        border-radius: 39%;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-radius: 30%;
+        bottom: -80px;
+    }
+}
+
+.handleShadow{
+    width: 120px;
+    height: 90px;
+    margin-left: 89px;
+    margin-top: 10%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.handle{
+    width: px;
+    height: 30px;
+    border: 8px solid #eee;
+    border-radius: 4em;
+    border-left: none;
+    transform: translateX(-80px);
+}
+
+.pour{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: #4d2600;
+    top: 20px;
+    left: 44%;
+    border-radius: 1em;
+    border-top-right-radius: 0.2em;
+    animation: pour 2s linear infinite;
+}
+
+@keyframes pour{
+    0%{
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(350px);
+    }
 }

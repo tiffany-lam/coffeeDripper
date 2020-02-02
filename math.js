@@ -1,4 +1,4 @@
-$(test2).ready(function(){
+$(document).ready(function(){
     $("submitName").click(function(){
         var hours = $("#numberField").val();
         function coffeeCalc(hour){

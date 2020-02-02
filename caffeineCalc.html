@@ -36,11 +36,12 @@
                 var coffeeMg = (hours/5) * 50
                 //95 mg of caffeine in ONE cup of coffee
                 var cups = coffeeMg / 95;
-                var roundedCups = Math.round(cups*10)/10;
+                var roundedCups = Math.round(cups*10)/10; //rounded to 1 decimal place
+                var roundedCups2 = Math.round(cups); //rounded to 1 fullsize 
                 var returnValue = roundedCups;
                 document.getElementById("valueDisplay") .innerHTML = roundedCups;
 
-                var cupCount = roundedCups;
+                var cupCount = roundedCups2;
                 var x = 0
                 var columnCount = 'column' + x.toString()
 
@@ -79,7 +80,7 @@
     <div class="row" id ="row"> </div><!--close for row-->
 
     <div id = "formThing">
-        <p id = "warningText">Depending on your caffeine tolerance, this amount may vary. This value is calculated for someone with a normal tolerance. </p>
+        <p id = "warningText">We calculate with 95 mg of caffeine per cup. Depending on your caffeine tolerance, this amount may vary. This value is calculated for someone with a normal tolerance. </p>
         
     </div>
     
